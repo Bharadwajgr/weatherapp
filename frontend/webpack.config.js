@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+
 const TransferWebpackPlugin = require('transfer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -12,11 +13,10 @@ module.exports = {
     historyApiFallback: true,
     port: 8000,
     host: '0.0.0.0',
-    hot: true,
   },
   devtool: 'eval',
   output: {
-    filename: 'bundle.js',
+    filename: 'index.jsx',
     publicPath: '/',
   },
   module: {
@@ -31,9 +31,6 @@ module.exports = {
       },
     ],
   },
-  watchOptions: {
-    poll: true,
-  },
   plugins: [
     new HtmlWebpackPlugin({ template: 'src/public/index.html' }),
     new webpack.HotModuleReplacementPlugin(),
@@ -44,7 +41,12 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         ENDPOINT: JSON.stringify(process.env.ENDPOINT || 'http://0.0.0.0:9000/api'),
+        GEO_API_KEY: JSON.stringify(process.env.GEO_API_KEY || 'empty'),
       },
     }),
   ],
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 1000,
+  },
 };
