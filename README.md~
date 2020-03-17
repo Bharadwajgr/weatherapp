@@ -100,18 +100,7 @@ To run using the Google Cloud Platform, follow these steps:
 
 
 To run using the AWS platform, follow these steps:
- * There are many ways of running this application on AWS. AWS has many services like DynamoDB, Elastic Beanstalk, EC2 container service or EC2 Instance. Here, I'm listing steps to run it in EC2 instance.
-
- * Create account on aws
- * Launch an EC2 instance
- * SSH into your instance
- * Install Node.js and npm
- * Install Git and clone repository from GitHub
- * Install Docker and Docker-compose.
- * Start the node.js app using docker-compose
- * Keep the docker-compose running
-
-Note:-While website is working OK, for some reason, sometimes I am get an error like this - GET /sockjs-node/info?t=1562854845849 net::ERR_CONNECTION_REFUSED
+ * There are many ways of running this application on AWS. AWS has many services like DynamoDB, Elastic Beanstalk or EC2 Instance. Here, I'm giving you steps 
 
 ### Ansible
 
